@@ -27,6 +27,38 @@ return {
 return {
   -- current color scheme
   {
+    "NTBBloodbath/doom-one.nvim",
+    name = "doom-one",
+    opts = {
+      cursor_coloring = false,
+      terminal_colors = true,
+      italic_comments = false,
+      enable_treesitter = true,
+      diagnostics_text_color = false,
+      transparent_background = true,
+      pumblend_enable = false,
+      pumblend_transparency = 20,
+      plugin_neorg = true,
+      plugin_barbar = false,
+      plugin_telescope = false,
+      plugin_neogit = true,
+      plugin_nvim_tree = true,
+      plugin_dashboard = true,
+      plugin_startify = true,
+      plugin_whichkey = true,
+      plugin_indent_blankline = true,
+      plugin_vim_illuminate = true,
+      plugin_lspsaga = false,
+    },
+    config = function(_, opts)
+      for k, v in pairs(opts) do
+        vim.g["doom_one_" .. k] = v
+      end
+      vim.cmd("colorscheme doom-one")
+    end,
+  },
+
+  {
     "rose-pine/neovim",
     name = "rose-pine",
     priority = 1000,
@@ -69,7 +101,7 @@ return {
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "rose-pine",
+      colorscheme = "doom-one",
     },
   },
 }
