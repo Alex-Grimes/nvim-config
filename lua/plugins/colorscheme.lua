@@ -26,7 +26,20 @@ return {
 }--]]
 return {
   -- current color scheme
+
   {
+    "EdenEast/nightfox.nvim",
+    name = nightfox,
+    config = function()
+      require("nightfox").setup({
+        options = {
+          colorscheme = "carbonfox",
+        },
+      })
+    end,
+  },
+
+  --[[  {
     "NTBBloodbath/doom-one.nvim",
     name = "doom-one",
     opts = {
@@ -57,7 +70,8 @@ return {
       vim.cmd("colorscheme doom-one")
     end,
   },
-
+  ]]
+  --
   {
     "rose-pine/neovim",
     name = "rose-pine",
@@ -101,7 +115,7 @@ return {
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "doom-one",
+      colorscheme = "carbonfox",
     },
   },
 }
